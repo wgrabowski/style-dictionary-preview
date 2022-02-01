@@ -25,11 +25,11 @@ export function previewFormatter(config: PreviewConfig): Formatter {
 		html += dictionary.allTokens
 			.map((token) => {
 				const previewType = getPreviewType(token, config);
-				return `<div class='token__name' id='${token.name}'><span>${
+				return `<dt class='token__name' id='${token.name}'><span>${
 					token.name
-				}</span></div>
-							<div class='token__value'><code contenteditable>${token.value}</code></div>
-							<div class='token__preview'>
+				}</span></dt>
+							<dd class='token__value'><code contenteditable>${token.value}</code></dd>
+							<dd class='token__preview'>
 								<div>
 									${getPreviewHtml(
 										previewType,
@@ -37,7 +37,7 @@ export function previewFormatter(config: PreviewConfig): Formatter {
 										getPreviewContent(previewType)
 									)}
 								</div>
-							</div>
+							</dd>
 							`;
 			})
 			.join("");
