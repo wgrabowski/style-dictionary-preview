@@ -3,21 +3,6 @@ import { htmlHead, tokenListHeader } from "./templates";
 import { PreviewConfig, PreviewType } from "./model";
 import { TransformedToken } from "style-dictionary";
 
-// export function previewFormatter(config: PreviewConfig): Formatter {
-// 	return function({ dictionary }): string {
-// 		let html = `<!doctype html><html>${htmlHead}<body>`;
-// 		html += `<main><dl class='tokens'>${tokenListHeader}`;
-// 		html += dictionary.allTokens.map(token => {
-// 			const previewType = getPreviewType(token, config);
-// 			return `<dt class='token__name' id='${token.name}'><span>${token.name}</span></dt>
-// <dd class='token__value'>${token.value}</dd><dd class='token__preview'>
-// 				${getPreviewHtml(previewType, getPreviewStyle(token, previewType), getPreviewContent(previewType))}
-// 			</dd>`;
-// 		}).join('');
-// 		html += '</dl></main></body></html>';
-// 		return html;
-// 	};
-// }
 export function previewFormatter(config: PreviewConfig): Formatter {
 	return function ({ dictionary }): string {
 		let html = `<!doctype html><html>${htmlHead}<body>`;
