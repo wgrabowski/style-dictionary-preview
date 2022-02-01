@@ -1,0 +1,28 @@
+{
+	"name": "style-dictionary-preview",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"bin": {
+		"style-dictionary-preview": "./bin/index.js"
+	},
+	"scripts": {
+		"start": "tsc src/index.ts --watch",
+		"build": "tsc src/index.ts",
+		"prepublishOnly": "npm run build",
+		"prelink": "npm run prepublishOnly",
+		"format": "prettier --write src"
+	},
+	"keywords": [],
+	"author": "",
+	"devDependencies": {
+		"@types/node": "17.0.13",
+		"prettier": "2.5.1",
+		"style-dictionary": "3.1.1",
+		"typescript": "4.5.5"
+	},
+	"dependencies": {
+		"enquirer": "2.3.6",
+		"minimist": "1.2.5"
+	}
+}

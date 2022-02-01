@@ -1,0 +1,20 @@
+{
+	"color": {
+		"background": {
+			"default": {
+				"value": "white"
+			},
+			"alternative": {
+				"value": "black"
+			}
+		},
+		"text": {
+			"content": {
+				"value": "#404040"
+			},
+			"dim": {
+				"value": "#ddd"
+			}
+		}
+	}
+}

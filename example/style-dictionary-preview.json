@@ -1,0 +1,17 @@
+{
+	"tokensDir": "tokens",
+	"outputDir": "preview",
+	"previewTypes": {
+		"border-width": "BorderWidth",
+		"border-style": "BorderStyle",
+		"border-color": "BorderColor",
+		"border": "Border",
+		"color": "Color",
+		"padding": "Size",
+		"font-size": "FontSize",
+		"font-weight": "FontWeight",
+		"font-style": "FontStyle",
+		"line-height": "LineHeight",
+		"headers": "Font"
+	}
+}

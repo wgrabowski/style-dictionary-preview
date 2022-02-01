@@ -1,0 +1,54 @@
+{
+	"font-size": {
+		"base": {
+			"value": "1em"
+		},
+		"small": {
+			"value": "0.5rem"
+		},
+		"medium": {
+			"value": "0.7rem"
+		},
+		"big": {
+			"value": "2rem"
+		}
+	},
+	"font-weight": {
+		"normal": {
+			"value": "400"
+		},
+		"bold": {
+			"value": "900"
+		},
+		"light": {
+			"value": "100"
+		}
+	},
+	"font-style": {
+		"default": {
+			"value": "normal"
+		},
+		"emphasis": {
+			"value": "italic"
+		}
+	},
+	"line-height": {
+		"content": {
+			"value": "1"
+		},
+		"extra": {
+			"value": "200%"
+		}
+	},
+	"headers": {
+		"h1": {
+			"value": "2rem/1.5 bold Arial, sans-serif"
+		},
+		"h2": {
+			"value": "1.5rem/1.5 bold Arial, sans-serif"
+		},
+		"h3": {
+			"value": "1.25rem/1.5 Georgia, sans-serif"
+		}
+	}
+}

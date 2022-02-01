@@ -1,0 +1,45 @@
+{
+	"border-width": {
+		"500": {
+			"value": "10px"
+		},
+		"400": {
+			"value": "8px"
+		},
+		"100": {
+			"value": "1px"
+		}
+	},
+	"border-style": {
+		"default": {
+			"value": "solid"
+		},
+		"retro-button": {
+			"value": "inset outset"
+		},
+		"subtle": {
+			"value": "dashed"
+		}
+	},
+	"border-color": {
+		"warning": {
+			"value": "darkorange"
+		},
+		"error": {
+			"value": "darkred"
+		},
+		"retro-button": {
+			"value": "gray"
+		}
+	},
+	"border": {
+		"button": {
+			"retro": {
+				"value": "4px outset gray"
+			},
+			"retro-active": {
+				"value": "4px inset gray"
+			}
+		}
+	}
+}
