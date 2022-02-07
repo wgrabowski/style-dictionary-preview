@@ -1,6 +1,7 @@
 import * as StyleDictionary from "style-dictionary";
-import { previewFormatter } from "../formatter";
+import { cardsFormatter, previewFormatter } from "../formatter";
 import { PreviewConfig } from "../formatter/model";
+import { stdout } from "process";
 
 export function generate(config: PreviewConfig) {
 	const styleDictionary = StyleDictionary.extend({
@@ -20,7 +21,7 @@ export function generate(config: PreviewConfig) {
 	});
 	styleDictionary.registerFormat({
 		name: "sdp",
-		formatter: previewFormatter(config),
+		formatter: cardsFormatter(config),
 	});
 	styleDictionary.buildPlatform("sdpPreview");
 }

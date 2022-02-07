@@ -10,7 +10,10 @@
 			"value": "0.7rem"
 		},
 		"big": {
-			"value": "2rem"
+			"value": "18rem"
+		},
+		"enormouse": {
+			"value": "4rem"
 		}
 	},
 	"font-weight": {

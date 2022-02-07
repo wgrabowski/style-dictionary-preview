@@ -1,10 +1,11 @@
 import { argv, stderr, stdout } from "process";
 import { generate } from "./preview";
 import { readFileSync } from "fs";
-import { parseOptions } from "./cli";
+import { help, parseOptions } from "./cli";
 import { scan } from "./scan";
 import { PreviewConfig } from "./formatter/model";
 import { dirname, join } from "path";
+import { serve } from "./serve";
 
 const cliOptions = parseOptions(argv.slice(2));
 
@@ -19,6 +20,13 @@ function getNormalizedConfig(): PreviewConfig {
 }
 
 async function main() {
+	if (
+		(!cliOptions.scan && !cliOptions.config && !cliOptions.live) ||
+		cliOptions.help
+	) {
+		stdout.write(help());
+		return;
+	}
 	if (cliOptions.scan) {
 		scan(cliOptions.scan);
 		return;
@@ -30,7 +38,19 @@ async function main() {
 		);
 		return;
 	}
-	generate(getNormalizedConfig());
+	try {
+		const normalizedConfig = getNormalizedConfig();
+	} catch {
+		stderr.write(
+			`Something went wrong while reading "${cliOptions.config}" file\n`
+		);
+		return;
+	}
+	if (cliOptions.live) {
+		serve(getNormalizedConfig());
+	} else {
+		generate(getNormalizedConfig());
+	}
 }
 
 main();

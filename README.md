@@ -53,6 +53,11 @@ Config file is required with following content:
 
 It parses JSON files from `tokensDir` and generates `index.html` file in `outputDir` based on `previewTypes` setting.  
 
+### Serving live preview and watching for changes
+`npx style-dictionary-preview --config <configfile> --live` where `<configfile>` is path to your config file.
+
+It parses JSON files from `tokensDir` and generates `index.html` file in `outputDir` based on `previewTypes` setting.
+Generated file is served on `http://localhost:3000` and rebuild with any change in `tokensDir` JSON files. 
 ### Generating previewStyles from existing tokens
 To generate `previewTypes` for each category from existing tokens run `style-dictionary-preview --scan <tokens-directory>`.
 It will find categories defined in your token fields, for each category ask you which preview type should be assigned to it and output JSON object that you can use in config file.

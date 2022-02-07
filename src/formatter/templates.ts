@@ -18,19 +18,18 @@ body {
 	font: 14px 'Fira Code',monospace;
 }
 main {
-	width: 96%;
-	width: max-content;
-	margin: 0 auto;
-	max-width: 960px;
+	margin:1em auto;
+	width: 100%;
+	max-width: 1400px;
 }
 </style>
 <style>
 .tokens {
 	display: grid;
-	grid-template-columns: repeat(3, max-content);
+	grid-template-columns: repeat(4, minmax(min-content, 1fr));
 	grid-template-rows: max-content minmax(80px, max-content);
 	grid-auto-rows: minmax(80px, max-content);
-	grid-gap: 8px 0;
+	grid-gap: 8px;
 }
 
 .token__name,
@@ -59,6 +58,35 @@ main {
 	align-items: center;
 	border-radius:  0 8px 8px 0;
 	border-width: 1px 1px 1px 0;
+}
+</style>
+<style>
+.token-card{
+    display: grid;
+    grid-template: "name name" min-content
+    "preview preview" minmax(100px, 1fr)
+    "value value" min-content;
+    grid-gap: 8px;
+    background: white;;
+    padding:8px;
+    border-radius: 5px;
+    border:1px dashed lightgray;
+}
+.token-card__name{
+    grid-area: name;
+}
+.token-card__value{
+    grid-area: value;
+    justify-self: end;
+}
+.token-card__preview{
+    grid-area: preview;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		background: white;
+	 	border:1px dashed lightgray;
+	 	border-width: 1px 0;
 }
 </style>
 <style>

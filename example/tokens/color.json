@@ -1,5 +1,8 @@
 {
 	"color": {
+		"deeppink": {
+			"value": "deeppink"
+		},
 		"background": {
 			"default": {
 				"value": "white"

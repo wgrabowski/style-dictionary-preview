@@ -6,15 +6,15 @@ import { TransformedToken } from "style-dictionary";
 export function previewFormatter(config: PreviewConfig): Formatter {
 	return function ({ dictionary }): string {
 		let html = `<!doctype html><html>${htmlHead}<body>`;
-		html += `<main><div class='tokens'>${tokenListHeader}`;
+		html += `<main><dl class="tokens">${tokenListHeader}`;
 		html += dictionary.allTokens
 			.map((token) => {
 				const previewType = getPreviewType(token, config);
-				return `<dt class='token__name' id='${token.name}'><span>${
+				return `<dt class="token__name" id="${token.name}"><span>${
 					token.name
 				}</span></dt>
-							<dd class='token__value'><code contenteditable>${token.value}</code></dd>
-							<dd class='token__preview'>
+							<dd class="token__value"><code contenteditable>${token.value}</code></dd>
+							<dd class="token__preview">
 								<div>
 									${getPreviewHtml(
 										previewType,
@@ -26,8 +26,37 @@ export function previewFormatter(config: PreviewConfig): Formatter {
 							`;
 			})
 			.join("");
-		html += "</div></main></body></html>";
+		html += "</dl></main></body></html>";
 		return html;
+	};
+}
+
+export function cardsFormatter(config: PreviewConfig): Formatter {
+	return function ({ dictionary }): string {
+		let html = `<!doctype html><html lang="en">${htmlHead}<body>`;
+		html += `<main><div class="tokens">`;
+		html += dictionary.allTokens
+			.map((token) => {
+				const previewType = getPreviewType(token, config);
+				return `<div class="token-card"><dt class="token-card__name" id="${
+					token.name
+				}"><span>${token.name}</span></dt>
+							<div class="token-card__value"><code contenteditable>${token.value}</code></div>
+							<div class="token-card__preview">
+								<div>
+									${getPreviewHtml(
+										previewType,
+										getPreviewStyle(token, previewType),
+										getPreviewContent(previewType)
+									)}
+								</div>
+							</div>
+							</div>
+							`;
+			})
+			.join("");
+		html += "</div></main></body></html>";
+		return html.replace(/\t/g, "").replace(/\n/g, "");
 	};
 }
 
@@ -36,7 +65,7 @@ function getPreviewHtml(
 	style: string,
 	content: string = ""
 ): string {
-	return `<div class='preview preview--${previewType}' style='${style}'>${content}</div>`;
+	return `<div class="preview preview--${previewType}" style="${style}">${content}</div>`;
 }
 
 function getPreviewType(
@@ -54,7 +83,7 @@ function getPreviewContent(previewType: PreviewType): string {
 		case PreviewType.FontSize:
 		case PreviewType.FontStyle:
 		case PreviewType.FontWeight:
-			return "Aa 0-9";
+			return "Aa";
 		case PreviewType.LineHeight:
 			return "First line of text<br>Second line of text";
 		case PreviewType.Unknown:
