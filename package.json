@@ -33,6 +33,6 @@
 		"browser-sync": "2.27.7",
 		"chokidar": "3.5.3",
 		"enquirer": "2.3.6",
-		"minimist": "1.2.5"
+		"minimist": "1.2.6"
 	}
 }
